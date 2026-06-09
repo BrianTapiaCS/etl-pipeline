@@ -1,0 +1,16 @@
+defaults:
+  db_url: postgresql
+  batch_size: 1000
+
+sources:
+  - name: customers_csv
+    type: csv
+    path: data/customers.csv
+    target_table: stg_customers
+    pk: customer_id
+    schema:
+      customer_id: int
+      first_name: str
+      last_name: str
+      email: str
+      created_at: datetime
